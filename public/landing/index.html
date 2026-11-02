@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#162C43" />
+    <title>FieldTechGeeks — Property work, connected</title>
+    <meta name="description" content="Connect your property team, office, and field technicians. Open the FieldTechGeeks building manager portal, backoffice, or mobile app." />
+    <link rel="canonical" href="https://fieldtechgeeks.com/" />
+    <link rel="icon" type="image/png" href="/landing/assets/brand.png" />
+    <link rel="stylesheet" href="/landing/constants/theme.css" />
+    <link rel="stylesheet" href="/landing/landing.css" />
+    <script type="module" src="/landing/landing.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="/" aria-label="FieldTechGeeks home" data-i18n-label="home">
+        <img src="/landing/assets/brand.png" width="40" height="40" alt="" />
+        <span>FieldTechGeeks</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation" data-i18n-label="navigation">
+        <a class="mobile-nav" href="#mobile-app" data-i18n="mobileNav">Mobile app</a>
+        <button class="language-button" id="language-toggle" type="button" lang="es" hidden>Español</button>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="intro" aria-labelledby="page-heading">
+        <h1 id="page-heading"><span data-i18n="headlineFirst">Property work.</span><span data-i18n="headlineSecond">One connected team.</span></h1>
+        <p class="intro-copy" data-i18n="intro">From the first request to the final photo, keep everyone on the same page.</p>
+      </section>
+
+      <section class="portals" aria-label="Choose your workspace" data-i18n-label="portals">
+        <a class="portal portal-manager" href="https://manager.fieldtechgeeks.com/" aria-labelledby="manager-heading manager-action">
+          <span class="portal-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M7 27V6a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1v21M4 27h24M22 14h3a1 1 0 0 1 1 1v12M12 10h5M12 15h5M12 20h5M13 27v-3h4v3" /></svg>
+          </span>
+          <h2 id="manager-heading" data-i18n="managerHeading">Building managers</h2>
+          <p data-i18n="managerCopy">Request services for your properties and follow the work through completion.</p>
+          <span class="portal-action action-primary" id="manager-action"><span data-i18n="managerAction">Open manager portal</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" /></svg></span>
+        </a>
+        <a class="portal portal-office" href="https://backoffice.fieldtechgeeks.com/" aria-labelledby="office-heading office-action">
+          <span class="portal-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="5" y="6" width="22" height="17" rx="2"/><path d="M12 28h8m-4-5v5M10 12h5m-5 5h9m3-5h.01" /></svg>
+          </span>
+          <h2 id="office-heading" data-i18n="officeHeading">Backoffice</h2>
+          <p data-i18n="officeCopy">Coordinate jobs, support your technicians, and review completed work.</p>
+          <span class="portal-action action-secondary" id="office-action"><span data-i18n="officeAction">Open backoffice</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" /></svg></span>
+        </a>
+      </section>
+      <p class="sign-in-note"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 0 1 6 0v2" /></svg><span data-i18n="signInNote">Sign in with the phone number registered with your team.</span></p>
+
+      <section id="mobile-app" class="mobile-section" aria-labelledby="mobile-heading">
+        <div class="mobile-copy">
+          <div class="app-heading"><img src="/landing/assets/app-icon.png" alt="" width="56" height="56" loading="lazy" /><span data-i18n="technicianLabel">For field technicians</span></div>
+          <h2 id="mobile-heading" data-i18n="mobileHeading">Your next job. In your pocket.</h2>
+          <p data-i18n="mobileCopy">See assigned jobs, capture before-and-after photos, and keep work moving from your phone.</p>
+        </div>
+        <div class="app-links">
+          <a class="app-link" href="https://play.google.com/store/apps/details?id=com.d8ydev.fieldtech">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></svg>
+            <span><strong data-i18n="androidTitle">Android app</strong><span data-i18n="androidAction">Get it on Google Play</span></span>
+            <span class="app-link-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="app-link" href="mailto:d8ydev@gmail.com?subject=FieldTechGeeks%20iPhone%20app%20access">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></svg>
+            <span><strong data-i18n="iphoneTitle">iPhone app</strong><span data-i18n="iphoneAction">Request app access</span></span>
+            <span class="app-link-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>© 2026 FieldTechGeeks</p>
+      <nav aria-label="Footer" data-i18n-label="footer"><a href="/privacy-policy" data-i18n="privacy">Privacy policy</a><a href="mailto:d8ydev@gmail.com" data-i18n="contact">Contact</a></nav>
+    </footer>
+  </body>
+</html>

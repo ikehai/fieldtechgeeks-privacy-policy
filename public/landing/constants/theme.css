@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light;
+  --primary: #162c43;
+  --primary-light: #1e3d5c;
+  --accent: #f4a623;
+  --accent-soft: #fff4de;
+  --background: #f5f7fa;
+  --surface: #fff;
+  --text: #1a1a2e;
+  --muted: #667085;
+  --border: #e5e7eb;
+  --inverse: #fff;
+  --radius: 16px;
+  --font: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
