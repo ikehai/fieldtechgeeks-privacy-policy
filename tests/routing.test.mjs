@@ -59,5 +59,5 @@ test('both policy sources match and retain the published app identity', () => {
   assert.equal(root, nested.replace('../styles.css', './styles.css'));
   assert.match(root, /<h1>FieldTechGeeks<\/h1>/);
   assert.doesNotMatch(root, /Ikehai|FieldTrack/);
-  assert.match(root, /com\.d8ydev\.fieldtech/);
+  assert.doesNotMatch(root, /com\.d8ydev\.fieldtech|<strong>FieldTech<\/strong>|In-app\/internal reference|Android package/);
 });
