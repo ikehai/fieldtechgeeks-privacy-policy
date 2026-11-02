@@ -25,6 +25,13 @@ export default {
     if (url.hostname !== PRIMARY) return redirect(url, PRIMARY, '/privacy-policy');
     if (url.protocol !== 'https:') return redirect(url, PRIMARY);
 
+    if (url.pathname === '/') {
+      const asset = new URL(url);
+      asset.pathname = '/landing/';
+      return env.ASSETS.fetch(new Request(asset, request));
+    }
+    if (url.pathname.startsWith('/landing/')) return env.ASSETS.fetch(request);
+
     if (url.pathname === '/privacy-policy' || url.pathname === '/privacy-policy/') {
       const asset = new URL('/', url);
       return env.ASSETS.fetch(new Request(asset, request));

@@ -1,11 +1,14 @@
-# FieldTechGeeks privacy policy
+# FieldTechGeeks website
 
 The production privacy policy is https://fieldtechgeeks.com/privacy-policy.
 Cloudflare Worker `fieldtech-privacy-policy` serves the source in `public/`.
 
-The apex domain opens https://manager.fieldtechgeeks.com/. `/manager` and
+The apex domain serves the landing page in `public/landing/`. `/manager` and
 `/backoffice` redirect to the corresponding websites. Singular and www aliases
 redirect permanently to the plural spelling, preserving paths and queries.
+
+Landing-page translations and theme tokens live in `public/landing/constants/`.
+See `docs/landing-page.md` for the design and app-link details.
 
 ## Update and publish
 

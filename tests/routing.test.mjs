@@ -4,6 +4,31 @@ import { readFileSync } from 'node:fs';
 import worker from '../worker.mjs';
 
 const noAssets = { ASSETS: { fetch() { throw new Error('Redirect must precede asset serving'); } } };
+test('the primary homepage serves the landing page instead of redirecting', async () => {
+  const response = await worker.fetch(new Request('https://fieldtechgeeks.com/?from=bookmark'), {
+    ASSETS: { fetch(request) {
+      const url = new URL(request.url);
+      assert.equal(url.pathname, '/landing/');
+      assert.equal(url.search, '?from=bookmark');
+      return new Response('Choose your workspace');
+    } },
+  });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('Location'), null);
+  assert.equal(await response.text(), 'Choose your workspace');
+});
+
+test('landing styles, translations, and images reach the asset binding', async () => {
+  for (const path of ['/landing/landing.css', '/landing/landing.js', '/landing/constants/i18n.js', '/landing/assets/brand.png']) {
+    const request = new Request('https://fieldtechgeeks.com' + path);
+    const response = await worker.fetch(request, { ASSETS: { fetch(actual) {
+      assert.equal(actual, request);
+      return new Response('asset');
+    } } });
+    assert.equal(await response.text(), 'asset');
+  }
+});
+
 for (const [host, canonical] of [
   ['fieldtechgeek.com', 'fieldtechgeeks.com'],
   ['www.fieldtechgeek.com', 'fieldtechgeeks.com'],
@@ -36,7 +61,6 @@ test('policy stylesheet is served without a redirect', async () => {
   assert.equal(await response.text(), 'body {}');
 });
 for (const [path, expected] of [
-  ['/', 'https://manager.fieldtechgeeks.com/'],
   ['/manager', 'https://manager.fieldtechgeeks.com/'],
   ['/manager/request/123', 'https://manager.fieldtechgeeks.com/request/123'],
   ['/backoffice', 'https://backoffice.fieldtechgeeks.com/'],
