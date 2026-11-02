@@ -1,6 +1,6 @@
-# Ikehai Privacy Policy Site
+# FieldTechGeeks Privacy Policy Site
 
-Static GitHub Pages site for the FieldTrack mobile app privacy policy published under the Ikehai account.
+Static GitHub Pages site for the FieldTechGeeks mobile app privacy policy.
 
 ## Files
 
@@ -11,7 +11,7 @@ Static GitHub Pages site for the FieldTrack mobile app privacy policy published 
 
 ## Publish
 
-1. Create a new GitHub repository, for example `ikehai-privacy-policy`.
+1. Create a new GitHub repository, for example `fieldtechgeeks-privacy-policy`.
 2. Push this directory to the new repository.
 3. In GitHub, enable Pages with the `GitHub Actions` source.
 4. The workflow will publish the site automatically on push to `main`.
@@ -27,6 +27,6 @@ Review and update these details in `index.html` and `privacy-policy/index.html`:
 
 ## Suggested URL
 
-For a project site repo named `ikehai-privacy-policy`, the default URL will typically be:
+For a project site repo named `fieldtechgeeks-privacy-policy`, the default URL will typically be:
 
-`https://ikehai.github.io/ikehai-privacy-policy/`
+`https://ikehai.github.io/fieldtechgeeks-privacy-policy/`
