@@ -1,6 +1,6 @@
 # Ikehai Privacy Policy Site
 
-Static GitHub Pages site for the FieldTrack mobile app privacy policy published under the Ikehai account.
+Static GitHub Pages site for the FieldTechGeeks mobile app privacy policy published under the Ikehai account.
 
 ## Files
 
