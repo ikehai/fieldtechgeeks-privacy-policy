@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "fieldtech-privacy-policy",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-02",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "observability": {
+    "enabled": true,
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 }
+  },
+  "routes": [
+    { "pattern": "fieldtechgeeks.com", "custom_domain": true },
+    { "pattern": "www.fieldtechgeeks.com", "custom_domain": true },
+    { "pattern": "fieldtechgeek.com", "custom_domain": true },
+    { "pattern": "www.fieldtechgeek.com", "custom_domain": true },
+    { "pattern": "manager.fieldtechgeek.com", "custom_domain": true },
+    { "pattern": "backoffice.fieldtechgeek.com", "custom_domain": true }
+  ]
+}

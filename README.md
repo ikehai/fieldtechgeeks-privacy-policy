@@ -1,32 +1,34 @@
-# FieldTechGeeks Privacy Policy Site
+# FieldTechGeeks privacy policy
 
-Static GitHub Pages site for the FieldTechGeeks mobile app privacy policy.
+The production privacy policy is https://fieldtechgeeks.com/privacy-policy.
+Cloudflare Worker `fieldtech-privacy-policy` serves the source in `public/`.
 
-## Files
+The apex domain opens https://manager.fieldtechgeeks.com/. `/manager` and
+`/backoffice` redirect to the corresponding websites. Singular and www aliases
+redirect permanently to the plural spelling, preserving paths and queries.
 
-- `index.html`: privacy policy page at the root URL used by Google Play
-- `privacy-policy/index.html`: matching privacy policy page on a dedicated route
-- `styles.css`: shared site styles
-- `.github/workflows/pages.yml`: GitHub Pages deploy workflow
+## Update and publish
 
-## Publish
+Edit `public/index.html` and `public/privacy-policy/index.html` together, run
+`npm test`, and merge the update. In `ikehai/fieldtech`, run the **Deploy privacy
+policy** GitHub Actions workflow with this repository's commit SHA or branch.
+That workflow uses the existing Cloudflare deployment credentials.
 
-1. Create a new GitHub repository, for example `fieldtechgeeks-privacy-policy`.
-2. Push this directory to the new repository.
-3. In GitHub, enable Pages with the `GitHub Actions` source.
-4. The workflow will publish the site automatically on push to `main`.
+For a local deployment, install Node.js and run `npm ci`, authenticate Wrangler
+to the account that owns both domains, then run `npm run deploy`. Use
+`npm run deploy -- --dry-run` to validate packaging without publishing, or
+`npm run deploy -- --help` for prerequisites and recovery instructions.
 
-## Before Publishing
+## Legacy links
 
-Review and update these details in `index.html` and `privacy-policy/index.html`:
+The GitHub Pages workflow publishes only `legacy/`. These pages redirect visitors
+to the new policy and include a clickable fallback. JavaScript preserves query
+strings and section anchors. The normal GitHub Pages service cannot return a
+custom HTTP redirect status, so these use HTML redirects.
 
-- Contact email
-- Mailing address, if you want to provide one
-- Any vendor-specific disclosures you want to list
-- Jurisdiction-specific rights language if you want broader legal coverage
+## Recovery
 
-## Suggested URL
-
-For a project site repo named `fieldtechgeeks-privacy-policy`, the default URL will typically be:
-
-`https://ikehai.github.io/fieldtechgeeks-privacy-policy/`
+Redeploy the previous known-good commit to restore policy content and routing.
+Check the primary policy, stylesheet, singular aliases, manager and backoffice
+links, and HTTPS before publishing legacy redirects. The API and business data
+are independent of this Worker.
